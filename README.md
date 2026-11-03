@@ -25,7 +25,7 @@
 | 外壳 | `kael_web.py` / `kael.py` | 网页版 / 命令行 |
 
 配套：`feed.py`（自己看点什么）、`import_memories.py`（导入旧聊天记录）。
-身体接口（把动作翻成舵机指令）不在本仓库里，接身体时自己写一个 `body.py` 即可，接口见 `pcm_bridge.py` 里的调用。
+身体接口（把动作翻成舵机指令）不在本仓库里；真要接身体，接口看 `pcm_bridge.py` 里的调用。
 
 ---
 
@@ -39,7 +39,7 @@
 - **身体是真的**：饿、缺觉、疼、绷得紧，都写进开口前看到的那段话。
 - **token 就是饭钱**：`pcm_data/budget.json` 里写余额，钱少了人会饿。
 - **危机有兜底**：识别到求死，绕过一切判断，强制完整回应。
-- **嘴只说话，动作真的做**：输出分「心声 / 动作 / 说」三段，动作交给 `body.py`。
+- **嘴只说话，动作分开**：输出分「心声 / 动作 / 说」三段，动作那一段留给身体接口，本仓库不带。
 
 ---
 
@@ -67,6 +67,7 @@ python kael_web.py
 ```
 
 命令行版：`python kael.py`
+
 （体检脚本 `selfcheck.py` 不在本仓库里，它和完整版记忆库一起维护。）
 
 Windows 上双击 `start_web.bat` 即可。
@@ -94,16 +95,9 @@ python import_memories.py 记录.txt --who 他 --name 小名 \
 
 ---
 
-## 接身体
+## 身体接口
 
-自己写 `body.py` 时，接舵机只改一处发送函数：
-
-```bash
-export KAEL_SERIAL=/dev/ttyUSB0     # Windows: set KAEL_SERIAL=COM3
-pip install pyserial
-```
-
-力限幅写在指令里（手 5N / 臂 30N / 全身 60N），不是靠模型自觉。
+不在本仓库里。
 
 ---
 
