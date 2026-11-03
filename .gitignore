@@ -1,0 +1,19 @@
+# 运行时数据：绝不进仓库
+__pycache__/
+*.py[cod]
+pcm_data*/
+*_demo/
+*.json
+*.txt
+*.zstd
+seen.json
+key.txt
+raw.jsonl
+atomic.json
+self.json
+state_*.json
+emotion_v6_state.json
+_backup/
+# 但保留仓库需要的说明文件
+!requirements.txt
+!LICENSE
