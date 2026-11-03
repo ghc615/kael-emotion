@@ -67,7 +67,7 @@ python kael_web.py
 ```
 
 命令行版：`python kael.py`
-体检：`python selfcheck.py`（期望：通过 43 项，失败 0 项）
+（体检脚本 `selfcheck.py` 不在本仓库里，它和完整版记忆库一起维护。）
 
 Windows 上双击 `start_web.bat` 即可。
 
@@ -96,7 +96,7 @@ python import_memories.py 记录.txt --who 他 --name 小名 \
 
 ## 接身体
 
-`body.py` 现在只打印指令。接舵机时改 `_send()` 一处：
+自己写 `body.py` 时，接舵机只改一处发送函数：
 
 ```bash
 export KAEL_SERIAL=/dev/ttyUSB0     # Windows: set KAEL_SERIAL=COM3
